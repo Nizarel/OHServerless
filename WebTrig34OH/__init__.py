@@ -14,11 +14,14 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             pass
         else:
             productId = req_body.get('productId')
+            
 
     if productId:
-        return func.HttpResponse(f"The product name for your product id {productId} is Starfruit Explosion")
+        return func.HttpResponse(productId)
+        
     else:
         return func.HttpResponse(
              "This HTTP triggered function executed successfully. Pass a productId in the query string or in the request body for a personalized response.",
              status_code=200
         )
+       
